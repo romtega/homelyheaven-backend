@@ -1,5 +1,5 @@
-import mongoose from ' mongoose'
-import Housing from '../models/housing.js'
+import mongoose from 'mongoose'
+import { calculateTotalCost, validateDates } from '../middlewares/rentalMiddleware.js'
 
 const rentalSchema = new mongoose.Schema({
   housing: { type: mongoose.Schema.Types.ObjectId, ref: 'Housing', required: true },
@@ -8,33 +8,10 @@ const rentalSchema = new mongoose.Schema({
   startDate: { type: Date, required: true },
   endDate: { type: Date, required: true },
   totalCost: { type: Number },
-  isActive: {
-    type: Boolean,
-    default: true,
-    required: true
-  }
+  isActive: { type: Boolean, default: true, required: true }
 }, { timestamps: true })
 
-rentalSchema.methods.calculateTotalCost = async function () {
-  const housing = await Housing.findById(this.housing)
-  if (!housing) {
-    throw new Error('Housing not found')
-  }
-
-  const oneDay = 24 * 60 * 60 * 1000
-  const duration = Math.round(Math.abs((this.endDate - this.startDate) / oneDay))
-
-  this.totalCost = duration * housing.price
-  return this.totalCost
-}
-
-rentalSchema.pre('save', async function (next) {
-  try {
-    await this.calculateTotalCost()
-    next()
-  } catch (error) {
-    next(error)
-  }
-})
+rentalSchema.pre('save', calculateTotalCost)
+rentalSchema.pre('validate', validateDates)
 
 export default mongoose.model('Rental', rentalSchema)

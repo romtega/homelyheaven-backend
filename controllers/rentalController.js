@@ -1,4 +1,4 @@
-/* import Rental from '../models/rental.js'
+import Rental from '../models/rental.js'
 
 const createRental = async (req, res) => {
 
@@ -6,4 +6,4 @@ const createRental = async (req, res) => {
 
 export {
   createRental
-} */
+} 
