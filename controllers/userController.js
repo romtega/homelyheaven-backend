@@ -30,7 +30,7 @@ const getUSerById = async (req, res) => {
 
 const updateUserById = async (req, res) => {
   if (!req.params.userId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'invalid movie ID' })
+    return res.status(400).json({ msg: 'invalid User ID' })
   }
 
   try {
@@ -65,7 +65,7 @@ const deleteUserById = async (req, res) => {
     const user = await User.findByIdAndUpdate(req.params.userId, { isActive: false }, { new: false })
 
     if (!user || user.isActive === false) {
-      return res.status(404).json({ msg: 'movie not found' })
+      return res.status(404).json({ msg: 'user not found' })
     }
     res.status(204).json()
   } catch (error) {

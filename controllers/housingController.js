@@ -51,7 +51,7 @@ const getAllHousing = async (req, res) => {
 
 const getHousingById = async (req, res) => {
   if (!req.params.housingId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'invalid user ID' })
+    return res.status(400).json({ msg: 'invalid housing ID' })
   }
   try {
     const housing = await Housing.findById({ _id: req.params.housingId, isActive: true }).populate('address')
@@ -66,13 +66,13 @@ const getHousingById = async (req, res) => {
 
 const updateHousingById = async (req, res) => {
   if (!req.params.housingId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'invalid movie ID' })
+    return res.status(400).json({ msg: 'invalid housing ID' })
   }
 
   try {
     const housing = await Housing.findByIdAndUpdate(req.params.housingId, req.body, { new: true })
     if (!housing) {
-      return res.status(404).json({ msg: 'user not found' })
+      return res.status(404).json({ msg: 'housing not found' })
     }
     res.status(200).json(housing)
   } catch (error) {
@@ -82,14 +82,14 @@ const updateHousingById = async (req, res) => {
 
 const deleteHousingrById = async (req, res) => {
   if (!req.params.housingId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'invalid user ID' })
+    return res.status(400).json({ msg: 'invalid housing ID' })
   }
 
   if (req.query.destroy === 'true') {
     try {
       const housing = await Housing.findByIdAndDelete(req.params.housingId)
       if (!housing) {
-        return res.status(404).json({ msg: 'user not found' })
+        return res.status(404).json({ msg: 'housing not found' })
       }
       return res.status(204).json()
     } catch (error) {
@@ -101,7 +101,7 @@ const deleteHousingrById = async (req, res) => {
     const housing = await Housing.findByIdAndUpdate(req.params.housingId, { isActive: false }, { new: false })
 
     if (!housing || housing.isActive === false) {
-      return res.status(404).json({ msg: 'movie not found' })
+      return res.status(404).json({ msg: 'housing not found' })
     }
     res.status(204).json()
   } catch (error) {
