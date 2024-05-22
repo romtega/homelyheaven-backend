@@ -13,5 +13,13 @@ const rentalSchema = new mongoose.Schema({
 
 rentalSchema.pre('save', calculateTotalCost)
 rentalSchema.pre('validate', validateDates)
+rentalSchema.pre('findOneAndUpdate', async function (next) {
+  await calculateTotalCost.call(this, next)
+})
+rentalSchema.post('findOneAndUpdate', async function (doc) {
+  if (doc) {
+    await doc.save()
+  }
+})
 
 export default mongoose.model('Rental', rentalSchema)
