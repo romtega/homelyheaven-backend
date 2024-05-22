@@ -1,12 +1,15 @@
 import express from 'express'
 import { createAddress, deleteAddressById, getAddressById, getAllAddress, updateAddressById } from '../controllers/addressConytroller.js'
+import { isAuth } from '../middlewares/isAuth.js'
+import { isProviderOrAdmin } from '../middlewares/isProviderOrAdmin.js'
+import { isAdmin } from '../middlewares/isAdmin.js'
 
 const addressRoutes = express.Router()
 
-addressRoutes.post('/', createAddress)
-addressRoutes.get('/', getAllAddress)
-addressRoutes.get('/:addressId', getAddressById)
-addressRoutes.patch('/:addressId', updateAddressById)
-addressRoutes.delete('/:addressId', deleteAddressById)
+addressRoutes.post('/', isAuth, isProviderOrAdmin, createAddress)
+addressRoutes.get('/', isAuth, isAdmin, getAllAddress)
+addressRoutes.get('/:addressId', isAuth, isAdmin, getAddressById)
+addressRoutes.patch('/:addressId', isAuth, isProviderOrAdmin, updateAddressById)
+addressRoutes.delete('/:addressId', isAuth, isProviderOrAdmin, deleteAddressById)
 
 export default addressRoutes

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const roleEnum = ['provider', 'customer']
+const roleEnum = ['provider', 'customer', 'admin']
 
 const userSchema = new mongoose.Schema({
   dni: {

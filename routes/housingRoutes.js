@@ -1,12 +1,15 @@
 import express from 'express'
 import { createHousing, deleteHousingrById, getAllHousing, getHousingById, updateHousingById } from '../controllers/housingController.js'
+import { isAuth } from '../middlewares/isAuth.js'
+import { isProviderOrAdmin } from '../middlewares/isProviderOrAdmin.js'
+import { isAdmin } from '../middlewares/isAdmin.js'
 
 const housingRoutes = express.Router()
 
-housingRoutes.post('/', createHousing)
-housingRoutes.get('/', getAllHousing)
-housingRoutes.get('/:housingId', getHousingById)
-housingRoutes.patch('/:housingId', updateHousingById)
-housingRoutes.delete('/:housingId', deleteHousingrById)
+housingRoutes.post('/', isAuth, isProviderOrAdmin, createHousing)
+housingRoutes.get('/', isAuth, isAdmin, getAllHousing)
+housingRoutes.get('/:housingId', isAuth, isProviderOrAdmin, getHousingById)
+housingRoutes.patch('/:housingId', isAuth, isProviderOrAdmin, updateHousingById)
+housingRoutes.delete('/:housingId', isAuth, isProviderOrAdmin, deleteHousingrById)
 
 export default housingRoutes
