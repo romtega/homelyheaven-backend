@@ -25,11 +25,12 @@ const isAuth = async (req, res, next) => {
       return res.status(403).json({ msg: 'token has expired' })
     }
 
-    const user = await User.findById(payload.sub).select('_id role')
+    const user = await User.findById(payload.id).select('_id role')
     if (!user) {
       return res.status(403).json({ msg: 'user not found' })
     }
 
+    req.role = payload.role
     req.user = user
     next()
   } catch (error) {
