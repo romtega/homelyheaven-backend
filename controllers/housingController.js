@@ -1,5 +1,26 @@
 import Housing from '../models/housing.js'
 import Address from '../models/address.js'
+import multer from 'multer'
+import { tmpdir } from 'os'
+import { v2 as cloudinary } from 'cloudinary'
+
+const storage = multer.diskStorage({
+  destination: tmpdir(),
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+const upload = multer({
+  storage
+})
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+
+})
 
 const createHousing = async (req, res) => {
   try {
@@ -10,6 +31,11 @@ const createHousing = async (req, res) => {
 
     if (!housingData.address) {
       return res.status(400).json({ msg: 'Address data is missing' })
+    }
+
+    if (req.file && req.file.path) {
+      const result = await cloudinary.uploader.upload(req.file.path)
+      housingData.imgUrl = result.secure_url
     }
 
     const existingAddress = await Address.findOne({
@@ -114,5 +140,6 @@ export {
   getAllHousing,
   getHousingById,
   updateHousingById,
-  deleteHousingrById
+  deleteHousingrById,
+  upload
 }
