@@ -6,7 +6,7 @@ import { isAdmin } from '../middlewares/isAdmin.js'
 
 const housingRoutes = express.Router()
 
-housingRoutes.post('/', upload.single('imgUrl'), createHousing)
+housingRoutes.post('/', upload.array('imgUrl', 5), isAuth, isProviderOrAdmin, createHousing)
 housingRoutes.get('/', isAuth, isAdmin, getAllHousing)
 housingRoutes.get('/:housingId', isAuth, isProviderOrAdmin, getHousingById)
 housingRoutes.patch('/:housingId', isAuth, isProviderOrAdmin, updateHousingById)

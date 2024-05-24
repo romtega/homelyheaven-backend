@@ -7,7 +7,7 @@ import { v2 as cloudinary } from 'cloudinary'
 const storage = multer.diskStorage({
   destination: tmpdir(),
   filename: function (req, file, cb) {
-    cb(null, file.originalname)
+    cb(null, `${Date.now()}-${file.originalname}`)
   }
 })
 
@@ -33,9 +33,12 @@ const createHousing = async (req, res) => {
       return res.status(400).json({ msg: 'Address data is missing' })
     }
 
-    if (req.file && req.file.path) {
-      const result = await cloudinary.uploader.upload(req.file.path)
-      housingData.imgUrl = result.secure_url
+    if (req.files && req.files.length > 0) {
+      const uploadPromises = req.files.map(file => cloudinary.uploader.upload(file.path));
+      const uploadResults = await Promise.all(uploadPromises);
+      housingData.imgUrl = uploadResults.map(result => result.secure_url);
+    } else {
+      housingData.imgUrl = []
     }
 
     const existingAddress = await Address.findOne({
@@ -57,7 +60,9 @@ const createHousing = async (req, res) => {
     const newHousing = new Housing(housingData)
     await newHousing.save()
 
-    res.status(201).json(newHousing)
+    const populatedHousing = await Housing.findById(newHousing._id).populate('address')
+
+    res.status(201).json(populatedHousing)
   } catch (error) {
     res.status(400).json({ error: error.message })
   }

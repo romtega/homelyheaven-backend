@@ -8,7 +8,7 @@ const housingSchema = new mongoose.Schema({
   bathrooms: { type: Number, required: true },
   description: { type: String },
   address: { type: mongoose.Schema.Types.ObjectId, ref: 'Address', required: true },
-  imgUrl: { type: String },
+  imgUrl: { type: [String], default: [] },
   isActive: { type: Boolean, default: true }
 }, { timestamps: true })
 
