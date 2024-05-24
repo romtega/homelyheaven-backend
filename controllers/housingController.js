@@ -34,9 +34,9 @@ const createHousing = async (req, res) => {
     }
 
     if (req.files && req.files.length > 0) {
-      const uploadPromises = req.files.map(file => cloudinary.uploader.upload(file.path));
-      const uploadResults = await Promise.all(uploadPromises);
-      housingData.imgUrl = uploadResults.map(result => result.secure_url);
+      const uploadPromises = req.files.map(file => cloudinary.uploader.upload(file.path))
+      const uploadResults = await Promise.all(uploadPromises)
+      housingData.imgUrl = uploadResults.map(result => result.secure_url)
     } else {
       housingData.imgUrl = []
     }
