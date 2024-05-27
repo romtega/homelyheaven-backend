@@ -140,11 +140,52 @@ const deleteHousingrById = async (req, res) => {
   }
 }
 
+const getHousingQuery = async (req, res) => {
+  const querysDB = { isActive: true }
+
+  const housingKeys = ['name', 'type', 'price', 'bedrooms', 'bathrooms']
+  housingKeys.forEach(key => {
+    if (req.query[key]) {
+      if (key === 'price' || key === 'bedrooms' || key === 'bathrooms') {
+        querysDB[key] = req.query[key]
+      } else {
+        querysDB[key] = { $regex: new RegExp(req.query[key], 'i') }
+      }
+    }
+  })
+
+  const addressQuery = {}
+  const addressKeys = ['street', 'city', 'state', 'postalCode', 'country']
+  addressKeys.forEach(key => {
+    if (req.query[key]) {
+      addressQuery[key] = { $regex: new RegExp(req.query[key], 'i') }
+    }
+  })
+
+  try {
+    if (Object.keys(addressQuery).length > 0) {
+      const addresses = await Address.find(addressQuery)
+      const addressIds = addresses.map(address => address._id)
+      querysDB.address = { $in: addressIds }
+    }
+
+    const housings = await Housing.find(querysDB).populate('address')
+
+    if (!housings || housings.length === 0) {
+      return res.status(404).json({ msg: 'Housings not found' })
+    }
+    res.status(200).json(housings)
+  } catch (error) {
+    res.status(400).json({ msg: error.message })
+  }
+}
+
 export {
   createHousing,
   getAllHousing,
   getHousingById,
   updateHousingById,
   deleteHousingrById,
-  upload
+  upload,
+  getHousingQuery
 }
