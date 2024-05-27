@@ -58,8 +58,23 @@ const login = async (req, res) => {
   }
 }
 
+const checkUsarName = async (req, res) => {
+  try {
+    const { username } = req.params
+    const user = await User.findOne({ username })
+    if (user) {
+      return res.status(200).json({ isAvailable: false })
+    } else {
+      return res.status(200).json({ isAvailable: true })
+    }
+  } catch (error) {
+    return res.status(400).json({ error: error.message })
+  }
+}
+
 export {
   register,
-  login
+  login,
+  checkUsarName
 
 }
