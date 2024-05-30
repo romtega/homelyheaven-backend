@@ -5,6 +5,8 @@ import userRoutes from './routes/userRoutes.js'
 import housingRoutes from './routes/housingRoutes.js'
 import addressRoutes from './routes/addressRoutes.js'
 import rentalRoutes from './routes/rentalRoutes.js'
+import morgan from 'morgan'
+import cors from 'cors'
 
 const PORT = process.env.PORT || 3000
 
@@ -12,6 +14,8 @@ connect()
 
 const api = express()
 api.use(express.json())
+api.use(cors())
+api.use(morgan('tiny'))
 
 api.use('/api/v1', authRoutes)
 api.use('/api/v1/users', userRoutes)
