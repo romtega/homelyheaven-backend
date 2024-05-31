@@ -363,202 +363,205 @@ const populateDatabase = async () => {
       {
         name: 'Casa natural en Baza, España',
         type: 'Casa',
-        environment: 'Desierto',
         price: 120,
-        description: 'Una casa cueva perdida en medio de un paisaje desértico.',
-        address: addresses[0]._id,
         bedrooms: 5,
-        bathrooms: 2
+        bathrooms: 2,
+        place: 'desert',
+        description: 'Una casa cueva perdida en medio de un paisaje desértico.',
+        address: addresses[0]._id
       },
       {
         name: 'Villa en Sant Lluís, España',
         type: 'Villa',
-        environment: 'Playa',
         price: 600,
-        description: 'Hermosa casa de arquitectura moderna con vistas al mar, a 5 minutos de la playa de Punta Prima, la ciudad de Sant Lluís, a 15 minutos de Mahón y el aeropuerto.',
-        address: addresses[1]._id,
         bedrooms: 4,
-        bathrooms: 3
+        bathrooms: 3,
+        place: 'village',
+        description: 'Hermosa casa de arquitectura moderna con vistas al mar, a 5 minutos de la playa de Punta Prima, la ciudad de Sant Lluís, a 15 minutos de Mahón y el aeropuerto.',
+        address: addresses[1]._id
       },
       {
         name: 'Apartamento cómodo y céntrico',
         type: 'Apartamento',
-        environment: 'Ciudad',
         price: 60,
-        description: 'Cómodo y Céntrico Apartamento PDC ofrece piscina al aire libre y centro de fitness, además de terraza, y se encuentra en el centro de Playa del Carmen, a 9 min a pie de Playa de Playa del Carmen.',
-        address: addresses[2]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'beach',
+        description: 'Cómodo y Céntrico Apartamento PDC ofrece piscina al aire libre y centro de fitness, además de terraza, y se encuentra en el centro de Playa del Carmen, a 9 min a pie de Playa de Playa del Carmen.',
+        address: addresses[2]._id
+
       },
       {
         name: 'Condo Casa del Árbol',
         type: 'Casa',
-        environment: 'Ciudad',
         price: 40,
-        description: 'Condo Casa del Árbol está a 2,6 km de Estación internacional de autobús ADO y ofrece alojamiento con piscina al aire libre, jardín y recepción 24 horas. Hay wifi gratis en todo el alojamiento.',
-        address: addresses[3]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'beach',
+        description: 'Condo Casa del Árbol está a 2,6 km de Estación internacional de autobús ADO y ofrece alojamiento con piscina al aire libre, jardín y recepción 24 horas. Hay wifi gratis en todo el alojamiento.',
+        address: addresses[3]._id
+
       },
       {
         name: 'MC Suites Mexico City',
         type: 'Apartamento',
-        environment: 'Ciudad',
         price: 70,
-        description: 'Ubicado en el barrio de Reforma, a 1.8km del Museo Memoria y Tolerancia, a 16 min a pie del Museo de Arte Popular y a 1.4km del monumento a la independencia.',
-        address: addresses[4]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'city',
+        description: 'Ubicado en el barrio de Reforma, a 1.8km del Museo Memoria y Tolerancia, a 16 min a pie del Museo de Arte Popular y a 1.4km del monumento a la independencia.',
+        address: addresses[4]._id
+
       },
       {
         name: 'Loft 82',
         type: 'Casa',
-        environment: 'Ciudad',
         price: 20,
-        description: 'Situado en el centro de Mérida, dispone de patio y WiFi gratis, cuenta con aire acondicionado.',
-        address: addresses[5]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'city',
+        description: 'Situado en el centro de Mérida, dispone de patio y WiFi gratis, cuenta con aire acondicionado.',
+        address: addresses[5]._id
       },
       {
         name: 'Apartamento Torre Onze',
         type: 'Apartamento',
-        environment: 'Ciudad',
         price: 40,
-        description: 'Cuenta con piscina al aire libre, centro fitness y jardín, ofrece alojamiento en Mérida con WiFi gratis y vistas a la ciudad, y se encuentra a 5.8km del gran Museo del Mundo Maya.',
-        address: addresses[6]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'city',
+        description: 'Cuenta con piscina al aire libre, centro fitness y jardín, ofrece alojamiento en Mérida con WiFi gratis y vistas a la ciudad, y se encuentra a 5.8km del gran Museo del Mundo Maya.',
+        address: addresses[6]._id
       },
       {
         name: 'Casa Makawe',
         type: 'Casa',
-        environment: 'Playa',
         price: 160,
-        description: 'Casa Makawe ONLY ADULTS está en Sayulita y dispone de wifi gratis, piscina de temporada al aire libre, salón de uso común y terraza. Hay parking privado en el propio alojamiento.',
-        address: addresses[7]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'beach',
+        description: 'Casa Makawe ONLY ADULTS está en Sayulita y dispone de wifi gratis, piscina de temporada al aire libre, salón de uso común y terraza. Hay parking privado en el propio alojamiento.',
+        address: addresses[7]._id
       },
       {
         name: 'Cabaña Mazzalt',
         type: 'Cabaña',
-        environment: 'Bosque',
         price: 130,
-        description: 'Cabañas Mazzatl 6 pax se encuentra en Mazamitla y ofrece jardín y bar. Este chalet de montaña ofrece parking privado gratis, recepción 24 horas y wifi gratis.',
-        address: addresses[8]._id,
         bedrooms: 2,
-        bathrooms: 2
+        bathrooms: 2,
+        place: 'mountain',
+        description: 'Cabañas Mazzatl 6 pax se encuentra en Mazamitla y ofrece jardín y bar. Este chalet de montaña ofrece parking privado gratis, recepción 24 horas y wifi gratis.',
+        address: addresses[8]._id
       },
       {
         name: 'Tortugas Bay MX',
         type: 'Casa',
-        environment: 'Playa',
         price: 160,
-        description: 'Tortugas Bay, MX ofrece alojamiento con piscina al aire libre, wifi gratis y parking privado gratis en Don Pancho.',
-        address: addresses[9]._id,
         bedrooms: 3,
-        bathrooms: 2
+        bathrooms: 2,
+        place: 'beach',
+        description: 'Tortugas Bay, MX ofrece alojamiento con piscina al aire libre, wifi gratis y parking privado gratis en Don Pancho.',
+        address: addresses[9]._id
       },
       {
         name: 'Cabañas VIP Mazamitla',
         type: 'Cabaña',
-        environment: 'Bosque',
         price: 100,
-        description: 'Cabañas VIP Mazamitla se encuentra en Mazamitla, en la región de Jalisco. Ofrece alojamiento con parking privado gratis y acceso a la bañera de hidromasaje. El alojamiento dispone de bañera de hidromasaje.',
-        address: addresses[10]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'mountain',
+        description: 'Cabañas VIP Mazamitla se encuentra en Mazamitla, en la región de Jalisco. Ofrece alojamiento con parking privado gratis y acceso a la bañera de hidromasaje. El alojamiento dispone de bañera de hidromasaje.',
+        address: addresses[10]._id
       },
       {
         name: 'El Paraíso de Capitán Fernando',
         type: 'Apartamento',
-        environment: 'Playa',
         price: 130,
-        description: 'El Paraíso de Capitán Fernando está en Chelem y ofrece alojamiento con terraza o balcón, wifi gratis y TV, además de bicicletas gratis y piscina al aire libre. Hay parking privado en el propio alojamiento.',
-        address: addresses[11]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'beach',
+        description: 'El Paraíso de Capitán Fernando está en Chelem y ofrece alojamiento con terraza o balcón, wifi gratis y TV, además de bicicletas gratis y piscina al aire libre. Hay parking privado en el propio alojamiento.',
+        address: addresses[11]._id
       },
       {
         name: 'Beach Front Lofts, La Ventana',
         type: 'Apartamento',
-        environment: 'Playa',
         price: 240,
-        description: 'Beach Front Lofts, La Ventana ofrece alojamiento con piscina al aire libre, wifi gratis y parking privado gratis en La Ventana.',
-        address: addresses[12]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'beach',
+        description: 'Beach Front Lofts, La Ventana ofrece alojamiento con piscina al aire libre, wifi gratis y parking privado gratis en La Ventana.',
+        address: addresses[12]._id
       },
       {
         name: 'Hermoso alojamiento en Los Tules, frente al mar',
         type: 'Villa',
-        environment: 'Playa',
         price: 300,
-        description: 'La Villa Los Tules con 7 albercas a 50 pasos de la Playa se encuentra en Puerto Vallarta, a 2,4 km de la playa de Marina Vallarta, y ofrece restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. El establecimiento se encuentra a 2 km del muelle de cruceros y a 7 km del centro internacional de convenciones de Puerto Vallarta y ofrece un balcón con vistas al jardín y una pista de tenis. Ofrece recepción 24 horas, servicio de enlace con el aeropuerto, servicio de habitaciones y WiFi gratuita.',
-        address: addresses[13]._id,
         bedrooms: 2,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'beach',
+        description: 'La Villa Los Tules con 7 albercas a 50 pasos de la Playa se encuentra en Puerto Vallarta, a 2,4 km de la playa de Marina Vallarta, y ofrece restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. El establecimiento se encuentra a 2 km del muelle de cruceros y a 7 km del centro internacional de convenciones de Puerto Vallarta y ofrece un balcón con vistas al jardín y una pista de tenis. Ofrece recepción 24 horas, servicio de enlace con el aeropuerto, servicio de habitaciones y WiFi gratuita.',
+        address: addresses[13]._id
       },
       {
         name: 'Utopia Beach House and Suites',
         type: 'Casa',
-        environment: 'Playa',
         price: 90,
-        description: 'Utopia Beach House & Suites tiene vistas al jardín, wifi gratis y parking privado gratis. Está en Santa María Tonameca, a 2 min a pie de Playa de Agua Blanca.',
-        address: addresses[14]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'beach',
+        description: 'Utopia Beach House & Suites tiene vistas al jardín, wifi gratis y parking privado gratis. Está en Santa María Tonameca, a 2 min a pie de Playa de Agua Blanca.',
+        address: addresses[14]._id
       },
       {
         name: 'Casa Elda',
         type: 'Casa',
-        environment: 'Playa',
         price: 90,
-        description: 'Casa Elda está en Tulum y ofrece vistas a la piscina, piscina al aire libre, jardín, salón de uso común, terraza y zona de barbacoa. Hay wifi gratis.',
-        address: addresses[15]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'beach',
+        description: 'Casa Elda está en Tulum y ofrece vistas a la piscina, piscina al aire libre, jardín, salón de uso común, terraza y zona de barbacoa. Hay wifi gratis.',
+        address: addresses[15]._id
       },
       {
         name: 'Unique Beachfront Casa Kyma',
         type: 'Casa',
-        environment: 'Playa',
         price: 660,
-        description: 'Unique Beachfront Casa Kyma, Pool, San Crisanto, Yucatán, que cuenta con piscina al aire libre, jardín y terraza, ofrece alojamiento en San Crisanto con wifi gratis y vistas al mar. Este alojamiento frente a la playa ofrece parking privado gratis y acceso a un balcón.',
-        address: addresses[16]._id,
         bedrooms: 3,
-        bathrooms: 4
+        bathrooms: 4,
+        place: 'beach',
+        description: 'Unique Beachfront Casa Kyma, Pool, San Crisanto, Yucatán, que cuenta con piscina al aire libre, jardín y terraza, ofrece alojamiento en San Crisanto con wifi gratis y vistas al mar. Este alojamiento frente a la playa ofrece parking privado gratis y acceso a un balcón.',
+        address: addresses[16]._id
       },
       {
         name: 'Cabaña Los Saucos',
         type: 'Cabaña',
-        environment: 'Bosque',
         price: 120,
-        description: 'Cabañas Los Saucos se encuentra a 21 km de Cascadas Velo de Novia y ofrece alojamiento conjardín, restaurante y servicio de habitaciones. En el chalet de montaña, tanto el wifi como el parking privado son gratis.',
-        address: addresses[17]._id,
         bedrooms: 1,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'mountain',
+        description: 'Cabañas Los Saucos se encuentra a 21 km de Cascadas Velo de Novia y ofrece alojamiento conjardín, restaurante y servicio de habitaciones. En el chalet de montaña, tanto el wifi como el parking privado son gratis.',
+        address: addresses[17]._id
       },
       {
         name: 'Cabaña en el corazón de Avandaro',
         type: 'Cabaña',
-        environment: 'Bosque',
         price: 220,
-        description: 'Cabaña en el corazón de Avandaro, que está en Avándaro, ofrece alojamiento con patio. Esta casa o chalet dispone de jardín, zona de barbacoa, wifi gratis y parking privado gratis.',
-        address: addresses[18]._id,
         bedrooms: 3,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'mountain',
+        description: 'Cabaña en el corazón de Avandaro, que está en Avándaro, ofrece alojamiento con patio. Esta casa o chalet dispone de jardín, zona de barbacoa, wifi gratis y parking privado gratis.',
+        address: addresses[18]._id
       },
       {
         name: 'Cabañas Cinco Lagos',
         type: 'Cabaña',
-        environment: 'Bosque',
         price: 80,
-        description: 'Todos los alojamientos disponen de TV vía satélite de pantalla plana. Algunos cuentan con terraza y/o balcón con vistas al lago. Además, se proporcionan toallas.',
-        address: addresses[19]._id,
         bedrooms: 2,
-        bathrooms: 1
+        bathrooms: 1,
+        place: 'mountain',
+        description: 'Todos los alojamientos disponen de TV vía satélite de pantalla plana. Algunos cuentan con terraza y/o balcón con vistas al lago. Además, se proporcionan toallas.',
+        address: addresses[19]._id
       }
     ])
 
