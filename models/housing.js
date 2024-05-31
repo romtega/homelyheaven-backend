@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 const housingSchema = new mongoose.Schema({
   name: { type: String, required: true },
   type: { type: String, required: true },
+  environment: { type: String, required: true },
   price: { type: Number, required: true },
   bedrooms: { type: Number, required: true },
   bathrooms: { type: Number, required: true },
