@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
       validator: function (value) {
         return /^\d{10}$/.test(value)
       },
-      message: props => '{props.value} no es un numero de telefono valido. debe tener 10 dijitos'
+      message: props => '{props.value} no es un numero de teléfono valido. debe tener 10 dígitos'
     }
   },
   email: {
