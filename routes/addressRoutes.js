@@ -1,5 +1,5 @@
 import express from 'express'
-import { createAddress, deleteAddressById, getAddressById, getAllAddress, updateAddressById } from '../controllers/addressConytroller.js'
+import { createAddress, deleteAddressById, getAddressById, getAllAddress, updateAddressById } from '../controllers/addressController.js'
 import { isAuth } from '../middlewares/isAuth.js'
 import { isProviderOrAdmin } from '../middlewares/isProviderOrAdmin.js'
 import { isAdmin } from '../middlewares/isAdmin.js'
