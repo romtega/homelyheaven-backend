@@ -221,164 +221,206 @@ const populateDatabase = async () => {
         city: 'Baza',
         state: 'Andalucía',
         postalCode: '18800',
-        country: 'España'
+        country: 'España',
+        latitude: 37.46909200137546,
+        longitude: -2.66832297430386
       },
       {
         street: '7 Carrer Aquari de son Remei',
         city: 'Sant Lluís',
         state: 'Illes Balears',
         postalCode: '07710',
-        country: 'España'
+        country: 'España',
+        latitude: 39.81370502999196,
+        longitude: 4.269079425785896
       },
       {
         street: 'Calle 14 Norte Bis',
-        city: 'Playa del Carmen',
+        city: 'playa del Carmen',
         state: 'Quintana Roo',
         postalCode: '77710',
-        country: 'México'
+        country: 'México',
+        latitude: 20.63156727373616,
+        longitude: -87.07489024780162
       },
       {
         street: 'Calle 21 Sur con diagonal 85 Sur. Colonia Ejidal',
-        city: 'Playa del Carmen',
+        city: 'playa del Carmen',
         state: 'Quintana Roo',
         postalCode: '77712',
-        country: 'México'
+        country: 'México',
+        latitude: 20.62642796170149,
+        longitude: -87.09516764594841
       },
       {
         street: '106 Calle General PRIM',
         city: 'Ciudad de México',
         state: 'Ciudad de México',
         postalCode: '06600',
-        country: 'México'
+        country: 'México',
+        latitude: 19.431074783641762,
+        longitude: -99.15685857480713
       },
       {
         street: 'Calle 82445A Colonia Centro',
         city: 'Mérida',
         state: 'Yucatán',
         postalCode: '97000',
-        country: 'México'
+        country: 'México',
+        latitude: 20.98160731136976,
+        longitude: -89.63484244954162
       },
       {
         street: 'Calle 22 281 Santa Gertudris, Copo',
         city: 'Mérida',
         state: 'Yucatán',
         postalCode: '97300',
-        country: 'México'
+        country: 'México',
+        latitude: 21.0434573404097,
+        longitude: -89.60017030361256
       },
       {
         street: 'Niños Heroes 120-A',
         city: 'Sayulita',
         state: 'Nayarit',
         postalCode: '63734',
-        country: 'México'
+        country: 'México',
+        latitude: 20.868470056290747,
+        longitude: -105.44255923245214
       },
       {
         street: 'Paseo de los Volcanes 6',
         city: 'Mazamitla',
         state: 'Jalisco',
         postalCode: '49500',
-        country: 'México'
+        country: 'México',
+        latitude: 19.92555995145509,
+        longitude: -103.01712626912241
       },
       {
         street: 'San Felipe Carretera a Puertecitos',
         city: 'Don Pancho',
         state: 'Baja California',
         postalCode: '21850',
-        country: 'México'
+        country: 'México',
+        latitude: 30.982348233088175,
+        longitude: -114.81794510150688
       },
       {
         street: 'Loma Blanca',
         city: 'Mazamitla',
         state: 'Jalisco',
         postalCode: '49500',
-        country: 'México'
+        country: 'México',
+        latitude: 19.90624863962907,
+        longitude: -103.01990368890698
       },
       {
         street: 'Calle 17 No. 818 entre 140 y 138',
         city: 'Chelem',
         state: 'Yucatán',
         postalCode: '97336',
-        country: 'México'
+        country: 'México',
+        latitude: 21.268798851770804,
+        longitude: -89.75254583244427
       },
       {
         street: 'Corredor Mar de Cortez',
         city: 'La Ventana',
         state: 'Baja California Sur',
         postalCode: '23232',
-        country: 'México'
+        country: 'México',
+        latitude: 24.0475967761414,
+        longitude: -109.98909289484654
       },
       {
         street: 'Avenida Francisco Medina Ascencio Zona Hotelera Norte Condominio Los Tules departamento 13-401',
         city: 'Puerto Vallarta',
         state: 'Jalisco',
         postalCode: '48333',
-        country: 'México'
+        country: 'México',
+        latitude: 20.64027970698602,
+        longitude: -105.23505961896527
       },
       {
         street: 'Camino Agua Blanca',
         city: 'Santa María Tonameca',
         state: 'Oaxaca',
         postalCode: '70944',
-        country: 'México'
+        country: 'México',
+        latitude: 15.734823367305035,
+        longitude: -96.80938080370284
       },
       {
         street: '7 Calle Geminis Sur Centro Tulum',
         city: 'Tulum',
         state: 'Quintana Roo',
         postalCode: '77760',
-        country: 'México'
+        country: 'México',
+        latitude: 20.21158914053926,
+        longitude: -87.45642040362878
       },
       {
         street: 'Calle 25 por 60 y 62',
         city: 'San Crisanto',
         state: 'Yucatán',
         postalCode: '97242',
-        country: 'México'
+        country: 'México',
+        latitude: 21.352203421088333,
+        longitude: -89.18754721709779
       },
       {
         street: 'Colonia Los Saucos Carretera Federal',
         city: 'Mesa de Palomas',
         state: 'Chihuahua',
         postalCode: '51200',
-        country: 'México'
+        country: 'México',
+        latitude: 28.767455856079554,
+        longitude: -103.68324752449776
       },
       {
         street: 'Fontana Bella',
         city: 'Avándaro',
         state: 'Estado de México',
         postalCode: '51200',
-        country: 'México'
+        country: 'México',
+        latitude: 19.16547523424841,
+        longitude: -100.11885934597571
       },
       {
-        street: 'Carretera a Cinco Lagos KM 2',
-        city: 'Santiago',
-        state: 'Ciudad de México',
-        postalCode: '30160',
-        country: 'México'
+        street: 'La Trinitaria',
+        city: 'Laguna de Montebello',
+        state: 'Chiapas',
+        postalCode: '30167',
+        country: 'México',
+        latitude: 16.115315838728414,
+        longitude: -91.67730739309157
       }
     ])
 
     // Viviendas
     const housings = await Housing.insertMany([
       {
-        name: 'Casa natural en Baza, España',
+        name: 'Casa natural en el desierto',
         type: 'Casa',
         price: 120,
         bedrooms: 5,
         bathrooms: 2,
-        place: 'desert',
+        place: 'desierto',
         description: 'Una casa cueva perdida en medio de un paisaje desértico.',
-        address: addresses[0]._id
+        address: addresses[0]._id,
+        califications: 0
       },
       {
-        name: 'Villa en Sant Lluís, España',
+        name: 'Villa moderna',
         type: 'Villa',
         price: 600,
         bedrooms: 4,
         bathrooms: 3,
-        place: 'village',
+        place: 'villa',
         description: 'Hermosa casa de arquitectura moderna con vistas al mar, a 5 minutos de la playa de Punta Prima, la ciudad de Sant Lluís, a 15 minutos de Mahón y el aeropuerto.',
-        address: addresses[1]._id
+        address: addresses[1]._id,
+        califications: 0
       },
       {
         name: 'Apartamento cómodo y céntrico',
@@ -386,10 +428,10 @@ const populateDatabase = async () => {
         price: 60,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'beach',
-        description: 'Cómodo y Céntrico Apartamento PDC ofrece piscina al aire libre y centro de fitness, además de terraza, y se encuentra en el centro de Playa del Carmen, a 9 min a pie de Playa de Playa del Carmen.',
-        address: addresses[2]._id
-
+        place: 'playa',
+        description: 'Cómodo y Céntrico Apartamento PDC ofrece piscina al aire libre y centro de fitness, además de terraza, y se encuentra en el centro de playa del Carmen, a 9 min a pie de playa de playa del Carmen.',
+        address: addresses[2]._id,
+        califications: 0
       },
       {
         name: 'Condo Casa del Árbol',
@@ -397,10 +439,10 @@ const populateDatabase = async () => {
         price: 40,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'beach',
+        place: 'playa',
         description: 'Condo Casa del Árbol está a 2,6 km de Estación internacional de autobús ADO y ofrece alojamiento con piscina al aire libre, jardín y recepción 24 horas. Hay wifi gratis en todo el alojamiento.',
-        address: addresses[3]._id
-
+        address: addresses[3]._id,
+        califications: 0
       },
       {
         name: 'MC Suites Mexico City',
@@ -408,10 +450,10 @@ const populateDatabase = async () => {
         price: 70,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'city',
+        place: 'ciudad',
         description: 'Ubicado en el barrio de Reforma, a 1.8km del Museo Memoria y Tolerancia, a 16 min a pie del Museo de Arte Popular y a 1.4km del monumento a la independencia.',
-        address: addresses[4]._id
-
+        address: addresses[4]._id,
+        califications: 0
       },
       {
         name: 'Loft 82',
@@ -419,9 +461,10 @@ const populateDatabase = async () => {
         price: 20,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'city',
+        place: 'ciudad',
         description: 'Situado en el centro de Mérida, dispone de patio y WiFi gratis, cuenta con aire acondicionado.',
-        address: addresses[5]._id
+        address: addresses[5]._id,
+        califications: 0
       },
       {
         name: 'Apartamento Torre Onze',
@@ -429,9 +472,10 @@ const populateDatabase = async () => {
         price: 40,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'city',
+        place: 'ciudad',
         description: 'Cuenta con piscina al aire libre, centro fitness y jardín, ofrece alojamiento en Mérida con WiFi gratis y vistas a la ciudad, y se encuentra a 5.8km del gran Museo del Mundo Maya.',
-        address: addresses[6]._id
+        address: addresses[6]._id,
+        califications: 0
       },
       {
         name: 'Casa Makawe',
@@ -439,9 +483,10 @@ const populateDatabase = async () => {
         price: 160,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'beach',
+        place: 'playa',
         description: 'Casa Makawe ONLY ADULTS está en Sayulita y dispone de wifi gratis, piscina de temporada al aire libre, salón de uso común y terraza. Hay parking privado en el propio alojamiento.',
-        address: addresses[7]._id
+        address: addresses[7]._id,
+        califications: 0
       },
       {
         name: 'Cabaña Mazzalt',
@@ -449,9 +494,10 @@ const populateDatabase = async () => {
         price: 130,
         bedrooms: 2,
         bathrooms: 2,
-        place: 'mountain',
+        place: 'montaña',
         description: 'Cabañas Mazzatl 6 pax se encuentra en Mazamitla y ofrece jardín y bar. Este chalet de montaña ofrece parking privado gratis, recepción 24 horas y wifi gratis.',
-        address: addresses[8]._id
+        address: addresses[8]._id,
+        califications: 0
       },
       {
         name: 'Tortugas Bay MX',
@@ -459,19 +505,21 @@ const populateDatabase = async () => {
         price: 160,
         bedrooms: 3,
         bathrooms: 2,
-        place: 'beach',
+        place: 'playa',
         description: 'Tortugas Bay, MX ofrece alojamiento con piscina al aire libre, wifi gratis y parking privado gratis en Don Pancho.',
-        address: addresses[9]._id
+        address: addresses[9]._id,
+        califications: 0
       },
       {
-        name: 'Cabañas VIP Mazamitla',
+        name: 'Cabaña VIP',
         type: 'Cabaña',
         price: 100,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'mountain',
+        place: 'montaña',
         description: 'Cabañas VIP Mazamitla se encuentra en Mazamitla, en la región de Jalisco. Ofrece alojamiento con parking privado gratis y acceso a la bañera de hidromasaje. El alojamiento dispone de bañera de hidromasaje.',
-        address: addresses[10]._id
+        address: addresses[10]._id,
+        califications: 0
       },
       {
         name: 'El Paraíso de Capitán Fernando',
@@ -479,29 +527,32 @@ const populateDatabase = async () => {
         price: 130,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'beach',
+        place: 'playa',
         description: 'El Paraíso de Capitán Fernando está en Chelem y ofrece alojamiento con terraza o balcón, wifi gratis y TV, además de bicicletas gratis y piscina al aire libre. Hay parking privado en el propio alojamiento.',
-        address: addresses[11]._id
+        address: addresses[11]._id,
+        califications: 0
       },
       {
-        name: 'Beach Front Lofts, La Ventana',
+        name: 'Beach Front Lofts',
         type: 'Apartamento',
         price: 240,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'beach',
+        place: 'playa',
         description: 'Beach Front Lofts, La Ventana ofrece alojamiento con piscina al aire libre, wifi gratis y parking privado gratis en La Ventana.',
-        address: addresses[12]._id
+        address: addresses[12]._id,
+        califications: 0
       },
       {
-        name: 'Hermoso alojamiento en Los Tules, frente al mar',
+        name: 'Hermoso alojamiento frente al mar',
         type: 'Villa',
         price: 300,
         bedrooms: 2,
         bathrooms: 1,
-        place: 'beach',
-        description: 'La Villa Los Tules con 7 albercas a 50 pasos de la Playa se encuentra en Puerto Vallarta, a 2,4 km de la playa de Marina Vallarta, y ofrece restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. El establecimiento se encuentra a 2 km del muelle de cruceros y a 7 km del centro internacional de convenciones de Puerto Vallarta y ofrece un balcón con vistas al jardín y una pista de tenis. Ofrece recepción 24 horas, servicio de enlace con el aeropuerto, servicio de habitaciones y WiFi gratuita.',
-        address: addresses[13]._id
+        place: 'playa',
+        description: 'La Villa Los Tules con 7 albercas a 50 pasos de la playa se encuentra en Puerto Vallarta, a 2,4 km de la playa de Marina Vallarta, y ofrece restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. El establecimiento se encuentra a 2 km del muelle de cruceros y a 7 km del centro internacional de convenciones de Puerto Vallarta y ofrece un balcón con vistas al jardín y una pista de tenis. Ofrece recepción 24 horas, servicio de enlace con el aeropuerto, servicio de habitaciones y WiFi gratuita.',
+        address: addresses[13]._id,
+        califications: 0
       },
       {
         name: 'Utopia Beach House and Suites',
@@ -509,9 +560,10 @@ const populateDatabase = async () => {
         price: 90,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'beach',
-        description: 'Utopia Beach House & Suites tiene vistas al jardín, wifi gratis y parking privado gratis. Está en Santa María Tonameca, a 2 min a pie de Playa de Agua Blanca.',
-        address: addresses[14]._id
+        place: 'playa',
+        description: 'Utopia Beach House & Suites tiene vistas al jardín, wifi gratis y parking privado gratis. Está en Santa María Tonameca, a 2 min a pie de playa de Agua Blanca.',
+        address: addresses[14]._id,
+        califications: 0
       },
       {
         name: 'Casa Elda',
@@ -519,19 +571,21 @@ const populateDatabase = async () => {
         price: 90,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'beach',
+        place: 'playa',
         description: 'Casa Elda está en Tulum y ofrece vistas a la piscina, piscina al aire libre, jardín, salón de uso común, terraza y zona de barbacoa. Hay wifi gratis.',
-        address: addresses[15]._id
+        address: addresses[15]._id,
+        califications: 0
       },
       {
-        name: 'Unique Beachfront Casa Kyma',
+        name: 'Unique beachfront Casa Kyma',
         type: 'Casa',
         price: 660,
         bedrooms: 3,
         bathrooms: 4,
-        place: 'beach',
-        description: 'Unique Beachfront Casa Kyma, Pool, San Crisanto, Yucatán, que cuenta con piscina al aire libre, jardín y terraza, ofrece alojamiento en San Crisanto con wifi gratis y vistas al mar. Este alojamiento frente a la playa ofrece parking privado gratis y acceso a un balcón.',
-        address: addresses[16]._id
+        place: 'playa',
+        description: 'Unique beachfront Casa Kyma, Pool, San Crisanto, Yucatán, que cuenta con piscina al aire libre, jardín y terraza, ofrece alojamiento en San Crisanto con wifi gratis y vistas al mar. Este alojamiento frente a la playa ofrece parking privado gratis y acceso a un balcón.',
+        address: addresses[16]._id,
+        califications: 0
       },
       {
         name: 'Cabaña Los Saucos',
@@ -539,9 +593,10 @@ const populateDatabase = async () => {
         price: 120,
         bedrooms: 1,
         bathrooms: 1,
-        place: 'mountain',
+        place: 'montaña',
         description: 'Cabañas Los Saucos se encuentra a 21 km de Cascadas Velo de Novia y ofrece alojamiento conjardín, restaurante y servicio de habitaciones. En el chalet de montaña, tanto el wifi como el parking privado son gratis.',
-        address: addresses[17]._id
+        address: addresses[17]._id,
+        califications: 0
       },
       {
         name: 'Cabaña en el corazón de Avandaro',
@@ -549,9 +604,10 @@ const populateDatabase = async () => {
         price: 220,
         bedrooms: 3,
         bathrooms: 1,
-        place: 'mountain',
+        place: 'montaña',
         description: 'Cabaña en el corazón de Avandaro, que está en Avándaro, ofrece alojamiento con patio. Esta casa o chalet dispone de jardín, zona de barbacoa, wifi gratis y parking privado gratis.',
-        address: addresses[18]._id
+        address: addresses[18]._id,
+        califications: 0
       },
       {
         name: 'Cabañas Cinco Lagos',
@@ -559,9 +615,10 @@ const populateDatabase = async () => {
         price: 80,
         bedrooms: 2,
         bathrooms: 1,
-        place: 'mountain',
+        place: 'montaña',
         description: 'Todos los alojamientos disponen de TV vía satélite de pantalla plana. Algunos cuentan con terraza y/o balcón con vistas al lago. Además, se proporcionan toallas.',
-        address: addresses[19]._id
+        address: addresses[19]._id,
+        califications: 0
       }
     ])
 
