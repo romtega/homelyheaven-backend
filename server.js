@@ -5,6 +5,7 @@ import userRoutes from './routes/userRoutes.js'
 import housingRoutes from './routes/housingRoutes.js'
 import addressRoutes from './routes/addressRoutes.js'
 import rentalRoutes from './routes/rentalRoutes.js'
+import reviewRoutes from './routes/reviewRoutes.js'
 import morgan from 'morgan'
 import cors from 'cors'
 
@@ -22,6 +23,7 @@ api.use('/api/v1/users', userRoutes)
 api.use('/api/v1/housing', housingRoutes)
 api.use('/api/v1/address', addressRoutes)
 api.use('/api/v1/rentals', rentalRoutes)
+api.use('/api/v1/reviews', reviewRoutes)
 
 api.listen(PORT, () => {
   console.log(`server is running in http://localhost:${PORT} 🌱`)

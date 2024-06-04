@@ -1,5 +1,6 @@
 import Housing from '../models/housing.js'
 import Address from '../models/address.js'
+import Review from '../models/reviews.js'
 import multer from 'multer'
 import { tmpdir } from 'os'
 import { v2 as cloudinary } from 'cloudinary'
@@ -111,7 +112,7 @@ const updateHousingById = async (req, res) => {
   }
 }
 
-const deleteHousingrById = async (req, res) => {
+const deleteHousingById = async (req, res) => {
   if (!req.params.housingId.match(/^[0-9a-fA-F]{24}$/)) {
     return res.status(400).json({ msg: 'invalid housing ID' })
   }
@@ -180,12 +181,29 @@ const getHousingQuery = async (req, res) => {
   }
 }
 
+const updateHousingRating = async (housingId) => {
+  try {
+    const reviews = await Review.find({ propertyId: housingId })
+    if (reviews.length > 0) {
+      const totalRating = reviews.reduce((acc, cur) => acc + cur.rating, 0)
+      const averageRating = totalRating / reviews.length
+      await Housing.findByIdAndUpdate(housingId, { califications: averageRating })
+    } else {
+      await Housing.findByIdAndUpdate(housingId, { califications: 0 })
+    }
+  } catch (error) {
+    console.error('Error updating housing rating:', error)
+    throw error
+  }
+}
+
 export {
   createHousing,
   getAllHousing,
   getHousingById,
   updateHousingById,
-  deleteHousingrById,
+  deleteHousingById,
   upload,
-  getHousingQuery
+  getHousingQuery,
+  updateHousingRating
 }
