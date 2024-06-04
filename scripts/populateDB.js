@@ -8,10 +8,7 @@ import Address from '../models/address.js'
 
 dotenv.config()
 
-mongoose.connect(process.env.DB_CONNECT_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.DB_CONNECT_URI)
   .then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('Error al conectar a MongoDB', err))
 
