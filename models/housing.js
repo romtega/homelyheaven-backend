@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const placeEnum = ['beach', 'city', 'village', 'mountain', 'suburb', 'desert']
+const placeEnum = ['playa', 'ciudad', 'villa', 'montaña', 'suburb', 'desierto']
 
 const housingSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -19,6 +19,7 @@ const housingSchema = new mongoose.Schema({
     kitchen: { type: Boolean, default: false }
   },
   address: { type: mongoose.Schema.Types.ObjectId, ref: 'Address', required: true },
+  califications: { type: Number, default: 0 },
   imgUrl: { type: [String], default: [] },
   isActive: { type: Boolean, default: true }
 }, { timestamps: true })
