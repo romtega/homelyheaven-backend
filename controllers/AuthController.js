@@ -81,13 +81,13 @@ const login = async (req, res) => {
 
     const token = jwt.encode(payload, process.env.SECRET)
 
-    return res.status(200).json({ msg: 'login seccess', token })
+    return res.status(200).json({ msg: 'login success', token })
   } catch (error) {
 
   }
 }
 
-const checkUsarName = async (req, res) => {
+const checkUserName = async (req, res) => {
   try {
     const { username } = req.params
     const user = await User.findOne({ username })
@@ -104,7 +104,7 @@ const checkUsarName = async (req, res) => {
 export {
   register,
   login,
-  checkUsarName,
+  checkUserName,
   upload
 
 }
