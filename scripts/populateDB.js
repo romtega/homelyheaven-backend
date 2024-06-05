@@ -34,7 +34,7 @@ const populateDatabase = async () => {
         lastName: 'Gómez',
         username: 'xarenmi@mail.com',
         email: 'xarenmi@mail.com@',
-        password: await bcrypt.hash('passwordparatutest', saltRounds),
+        password: await bcrypt.hash(process.env.USER_1_PASSWORD, saltRounds),
         phone: 1234562390,
         role: 'provider'
       },
@@ -43,7 +43,7 @@ const populateDatabase = async () => {
         lastName: 'Gómez',
         username: 'xarenmi3@mail.com',
         email: 'xarenmi3@mail.com@',
-        password: await bcrypt.hash('passwordparatutest3', saltRounds),
+        password: await bcrypt.hash(process.env.USER_2_PASSWORD, saltRounds),
         phone: 1234323220,
         role: 'admin'
       },
@@ -52,171 +52,162 @@ const populateDatabase = async () => {
         lastName: 'Gómez',
         username: 'maria.gomez',
         email: 'maria.gomez@gmail.com',
-        password: await bcrypt.hash('M@ri4Gomez!56', saltRounds),
+        password: await bcrypt.hash(process.env.USER_3_PASSWORD, saltRounds),
         phone: 3312345678,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Juan',
         lastName: 'Pérez',
         username: 'juan.perez',
         email: 'juan.perez@gmail.com',
-        password: await bcrypt.hash('Ju@nP3r3z*789', saltRounds),
+        password: await bcrypt.hash(process.env.USER_4_PASSWORD, saltRounds),
         phone: 8112345678,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Ana',
         lastName: 'López',
         username: 'ana.lopez',
         email: 'ana.lopez@gmail.com',
-        password: await bcrypt.hash('An@L0pez#456', saltRounds),
+        password: await bcrypt.hash(process.env.USER_5_PASSWORD, saltRounds),
         phone: 6641234567,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Pedro',
         lastName: 'Sánchez',
         username: 'pedro.sanchez',
         email: 'pedro.sanchez@gmail.com',
-        password: await bcrypt.hash('P3dr0S@ch3z!789', saltRounds),
+        password: await bcrypt.hash(process.env.USER_6_PASSWORD, saltRounds),
         phone: 9981234567,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Lucia',
         lastName: 'Rodríguez',
         username: 'lucia.rodriguez',
         email: 'lucia.rodriguez@gmail.com',
-        password: await bcrypt.hash('Luci@R0dri#123', saltRounds),
+        password: await bcrypt.hash(process.env.USER_7_PASSWORD, saltRounds),
         phone: 2221234567,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'José',
         lastName: 'Ramírez',
         username: 'jose.ramirez',
         email: 'jose.ramirez@gmail.com',
-        password: await bcrypt.hash('J0seR@m!rez*456', saltRounds),
+        password: await bcrypt.hash(process.env.USER_8_PASSWORD, saltRounds),
         phone: 5512545678,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Marta',
         lastName: 'Días',
         username: 'marta.dias',
         email: 'marta.diaz@gmail.com',
-        password: await bcrypt.hash('M@rt4Di@z!123', saltRounds),
+        password: await bcrypt.hash(process.env.USER_9_PASSWORD, saltRounds),
         phone: 5512546589,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Fernando',
         lastName: 'Martínez',
         username: 'fernando.martinez',
         email: 'fernando.martinez@gmail.com',
-        password: await bcrypt.hash('F3rn@ndoM@rt!nez', saltRounds),
+        password: await bcrypt.hash(process.env.USER_10_PASSWORD, saltRounds),
         phone: 5512545685,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Claudia',
         lastName: 'García',
         username: 'claudia.garcia',
         email: 'claudia.garcia@gmail.com',
-        password: await bcrypt.hash('Cl@udi4Garc!@789', saltRounds),
+        password: await bcrypt.hash(process.env.USER_11_PASSWORD, saltRounds),
         phone: 5512545686,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Ricardo',
         lastName: 'Fernández',
         username: 'ricardo.fernandez',
         email: 'ricardo.fernandez@gmail.com',
-        password: await bcrypt.hash('Ric@rd0F3rnand#', saltRounds),
+        password: await bcrypt.hash(process.env.USER_12_PASSWORD, saltRounds),
         phone: 5512545687,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Laura',
         lastName: 'Herrera',
         username: 'laura.herrera',
         email: 'laura.herrera@gmail.com',
-        password: await bcrypt.hash('L@ur4H3rr3r@123', saltRounds),
+        password: await bcrypt.hash(process.env.USER_13_PASSWORD, saltRounds),
         phone: 5512545688,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Jorge',
         lastName: 'Gutiérrez',
         username: 'jorge.gutierrez',
         email: 'jorge.gutierrez@gmail.com',
-        password: await bcrypt.hash('J0rg3Guti3rr3z!', saltRounds),
+        password: await bcrypt.hash(process.env.USER_14_PASSWORD, saltRounds),
         phone: 5512545689,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Sofia',
         lastName: 'Molina',
         username: 'sofia.molina',
         email: 'sofia.molina@gmail.com',
-        password: await bcrypt.hash('S0fi@M0lin@#2024', saltRounds),
+        password: await bcrypt.hash(process.env.USER_15_PASSWORD, saltRounds),
         phone: 5512545690,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Alberto',
         lastName: 'Ruiz',
         username: 'alberto.ruiz',
         email: 'alberto.ruiz@gmail.com',
-        password: await bcrypt.hash('Alb3rt0Ru!z*789', saltRounds),
+        password: await bcrypt.hash(process.env.USER_16_PASSWORD, saltRounds),
         phone: 5512545691,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Patricia',
         lastName: 'Morales',
         username: 'patricia.morales',
         email: 'patricia.morales@gmail.com',
-        password: await bcrypt.hash('P@trici@Mor@l3s!', saltRounds),
+        password: await bcrypt.hash(process.env.USER_17_PASSWORD, saltRounds),
         phone: 5512545692,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Francisco',
         lastName: 'Muñoz',
         username: 'francisco.munoz',
         email: 'francisco.munoz@gmail.com',
-        password: await bcrypt.hash('Fr@ncisc0Mun0z#', saltRounds),
+        password: await bcrypt.hash(process.env.USER_18_PASSWORD, saltRounds),
         phone: 5512545693,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Carolina',
         lastName: 'Álvarez',
         username: 'carolina.alvarez',
         email: 'carolina.alvarez@gmail.com',
-        password: await bcrypt.hash('C@rol!n@Alv@r3z', saltRounds),
+        password: await bcrypt.hash(process.env.USER_19_PASSWORD, saltRounds),
         phone: 5512545694,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'Cristian',
         lastName: 'Gómez',
         username: 'cristian.gomez',
         email: 'cristian.gierre@gmail.com',
-        password: await bcrypt.hash('Cristi4Gierre!56', saltRounds),
+        password: await bcrypt.hash(process.env.USER_20_PASSWORD, saltRounds),
         phone: 5512545695,
-        role: 'customer'
-      },
-      {
-        firstName: 'Javier',
-        lastName: 'Gómez',
-        username: 'javier.gierre',
-        email: 'javier.gierre@gmail.com',
-        password: await bcrypt.hash('J@v3rGierre!56', saltRounds),
-        phone: 5512545696,
-        role: 'customer'
+        role: 'admin'
       }
     ])
 
