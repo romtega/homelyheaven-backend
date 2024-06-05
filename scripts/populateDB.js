@@ -30,13 +30,22 @@ const populateDatabase = async () => {
     const saltRounds = 10
     const users = await User.insertMany([
       {
-        firstName: 'Carlos',
-        lastName: 'Méndez',
-        username: 'carlos.mendez',
-        email: 'carlos.mendez@gmail.com',
-        password: await bcrypt.hash('C@m3nd3z#2024', saltRounds),
-        phone: 5512345678,
-        role: 'customer'
+        firstName: 'Xarenmi',
+        lastName: 'Gómez',
+        username: 'xarenmi@mail.com',
+        email: 'xarenmi@mail.com@',
+        password: await bcrypt.hash('passwordparatutest', saltRounds),
+        phone: 1234562390,
+        role: 'provider'
+      },
+      {
+        firstName: 'Xarenmi',
+        lastName: 'Gómez',
+        username: 'xarenmi3@mail.com',
+        email: 'xarenmi3@mail.com@',
+        password: await bcrypt.hash('passwordparatutest3', saltRounds),
+        phone: 1234323220,
+        role: 'admin'
       },
       {
         firstName: 'María',
@@ -406,6 +415,7 @@ const populateDatabase = async () => {
         place: 'desierto',
         description: 'Una casa cueva perdida en medio de un paisaje desértico.',
         address: addresses[0]._id,
+        owner: users[0]._id,
         califications: 0
       },
       {
