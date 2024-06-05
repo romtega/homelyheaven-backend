@@ -4,7 +4,7 @@ const { Schema } = mongoose
 
 const reviewSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-  propertyId: { type: Schema.Types.ObjectId, ref: 'Property', required: true },
+  housingId: { type: Schema.Types.ObjectId, ref: 'Property', required: true },
   rating: { type: Number, required: true, min: 1, max: 5 },
   comment: { type: String, required: false },
   createdAt: { type: Date, default: Date.now },
