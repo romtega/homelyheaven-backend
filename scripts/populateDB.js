@@ -45,7 +45,7 @@ const populateDatabase = async () => {
         email: 'xarenmi3@mail.com@',
         password: await bcrypt.hash(process.env.USER_2_PASSWORD, saltRounds),
         phone: 1234323220,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'María',
@@ -54,7 +54,7 @@ const populateDatabase = async () => {
         email: 'maria.gomez@gmail.com',
         password: await bcrypt.hash(process.env.USER_3_PASSWORD, saltRounds),
         phone: 3312345678,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Juan',
@@ -63,7 +63,7 @@ const populateDatabase = async () => {
         email: 'juan.perez@gmail.com',
         password: await bcrypt.hash(process.env.USER_4_PASSWORD, saltRounds),
         phone: 8112345678,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Ana',
@@ -72,7 +72,7 @@ const populateDatabase = async () => {
         email: 'ana.lopez@gmail.com',
         password: await bcrypt.hash(process.env.USER_5_PASSWORD, saltRounds),
         phone: 6641234567,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Pedro',
@@ -81,7 +81,7 @@ const populateDatabase = async () => {
         email: 'pedro.sanchez@gmail.com',
         password: await bcrypt.hash(process.env.USER_6_PASSWORD, saltRounds),
         phone: 9981234567,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Lucia',
@@ -90,7 +90,7 @@ const populateDatabase = async () => {
         email: 'lucia.rodriguez@gmail.com',
         password: await bcrypt.hash(process.env.USER_7_PASSWORD, saltRounds),
         phone: 2221234567,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'José',
@@ -99,7 +99,7 @@ const populateDatabase = async () => {
         email: 'jose.ramirez@gmail.com',
         password: await bcrypt.hash(process.env.USER_8_PASSWORD, saltRounds),
         phone: 5512545678,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Marta',
@@ -108,7 +108,7 @@ const populateDatabase = async () => {
         email: 'marta.diaz@gmail.com',
         password: await bcrypt.hash(process.env.USER_9_PASSWORD, saltRounds),
         phone: 5512546589,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Fernando',
@@ -117,7 +117,7 @@ const populateDatabase = async () => {
         email: 'fernando.martinez@gmail.com',
         password: await bcrypt.hash(process.env.USER_10_PASSWORD, saltRounds),
         phone: 5512545685,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Claudia',
@@ -126,7 +126,7 @@ const populateDatabase = async () => {
         email: 'claudia.garcia@gmail.com',
         password: await bcrypt.hash(process.env.USER_11_PASSWORD, saltRounds),
         phone: 5512545686,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Ricardo',
@@ -135,7 +135,7 @@ const populateDatabase = async () => {
         email: 'ricardo.fernandez@gmail.com',
         password: await bcrypt.hash(process.env.USER_12_PASSWORD, saltRounds),
         phone: 5512545687,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Laura',
@@ -144,7 +144,7 @@ const populateDatabase = async () => {
         email: 'laura.herrera@gmail.com',
         password: await bcrypt.hash(process.env.USER_13_PASSWORD, saltRounds),
         phone: 5512545688,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Jorge',
@@ -153,7 +153,7 @@ const populateDatabase = async () => {
         email: 'jorge.gutierrez@gmail.com',
         password: await bcrypt.hash(process.env.USER_14_PASSWORD, saltRounds),
         phone: 5512545689,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Sofia',
@@ -162,7 +162,7 @@ const populateDatabase = async () => {
         email: 'sofia.molina@gmail.com',
         password: await bcrypt.hash(process.env.USER_15_PASSWORD, saltRounds),
         phone: 5512545690,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Alberto',
@@ -171,7 +171,7 @@ const populateDatabase = async () => {
         email: 'alberto.ruiz@gmail.com',
         password: await bcrypt.hash(process.env.USER_16_PASSWORD, saltRounds),
         phone: 5512545691,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Patricia',
@@ -180,7 +180,7 @@ const populateDatabase = async () => {
         email: 'patricia.morales@gmail.com',
         password: await bcrypt.hash(process.env.USER_17_PASSWORD, saltRounds),
         phone: 5512545692,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Francisco',
@@ -189,7 +189,7 @@ const populateDatabase = async () => {
         email: 'francisco.munoz@gmail.com',
         password: await bcrypt.hash(process.env.USER_18_PASSWORD, saltRounds),
         phone: 5512545693,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Carolina',
@@ -198,7 +198,7 @@ const populateDatabase = async () => {
         email: 'carolina.alvarez@gmail.com',
         password: await bcrypt.hash(process.env.USER_19_PASSWORD, saltRounds),
         phone: 5512545694,
-        role: 'admin'
+        role: 'customer'
       },
       {
         firstName: 'Cristian',
@@ -207,7 +207,7 @@ const populateDatabase = async () => {
         email: 'cristian.gierre@gmail.com',
         password: await bcrypt.hash(process.env.USER_20_PASSWORD, saltRounds),
         phone: 5512545695,
-        role: 'admin'
+        role: 'customer'
       }
     ])
 
