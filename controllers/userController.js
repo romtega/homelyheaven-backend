@@ -1,6 +1,19 @@
 import User from '../models/user.js'
 
-const getAllUSer = async (req, res) => {
+const getUserByEmail = async (req, res) => {
+  try {
+    const { email } = req.user
+    const user = await User.findOne({ email }).select('-password')
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' })
+    }
+    res.status(200).json({ user })
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving user', error: error.message })
+  }
+}
+
+const getAllUser = async (req, res) => {
   try {
     const users = await User.find({ isActive: true })
     if (!users) {
@@ -12,7 +25,7 @@ const getAllUSer = async (req, res) => {
   }
 }
 
-const getUSerById = async (req, res) => {
+const getUserById = async (req, res) => {
   if (!req.params.userId.match(/^[0-9a-fA-F]{24}$/)) {
     return res.status(400).json({ msg: 'invalid user ID' })
   }
@@ -74,8 +87,9 @@ const deleteUserById = async (req, res) => {
 }
 
 export {
-  getAllUSer,
-  getUSerById,
+  getUserByEmail,
+  getAllUser,
+  getUserById,
   updateUserById,
   deleteUserById
 }
