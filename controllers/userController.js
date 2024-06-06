@@ -1,18 +1,5 @@
 import User from '../models/user.js'
 
-const getUserByEmail = async (req, res) => {
-  try {
-    const { email } = req.user
-    const user = await User.findOne({ email }).select('-password')
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' })
-    }
-    res.status(200).json({ user })
-  } catch (error) {
-    res.status(500).json({ message: 'Error retrieving user', error: error.message })
-  }
-}
-
 const getAllUser = async (req, res) => {
   try {
     const users = await User.find({ isActive: true })
@@ -87,7 +74,6 @@ const deleteUserById = async (req, res) => {
 }
 
 export {
-  getUserByEmail,
   getAllUser,
   getUserById,
   updateUserById,
