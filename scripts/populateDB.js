@@ -45,7 +45,7 @@ const populateDatabase = async () => {
         email: 'xarenmi3@mail.com@',
         password: await bcrypt.hash(process.env.USER_2_PASSWORD, saltRounds),
         phone: 1234323220,
-        role: 'customer'
+        role: 'admin'
       },
       {
         firstName: 'María',
