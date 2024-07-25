@@ -1,4 +1,4 @@
-import Address from '../models/address.js'
+import Address from "../models/address.js"
 
 const createAddress = async (req, res) => {
   try {
@@ -21,7 +21,7 @@ const getAllAddress = async (rea, res) => {
   try {
     const addresss = await Address.find({ isActive: true })
     if (!addresss) {
-      return res.status(404).json({ msg: 'address no found' })
+      return res.status(404).json({ msg: "address no found" })
     }
     res.status(200).json(addresss)
   } catch (error) {
@@ -31,14 +31,14 @@ const getAllAddress = async (rea, res) => {
 
 const getAddressById = async (req, res) => {
   if (!req.params.addressId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'Invalid address ID' })
+    return res.status(400).json({ msg: "Invalid address ID" })
   }
 
   try {
     const address = await Address.findOne({ _id: req.params.addressId, isActive: true })
 
     if (!address) {
-      return res.status(404).json({ msg: 'Address not found' })
+      return res.status(404).json({ msg: "Address not found" })
     }
 
     res.status(200).json(address)
@@ -49,13 +49,13 @@ const getAddressById = async (req, res) => {
 
 const updateAddressById = async (req, res) => {
   if (!req.params.addressId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'invalid address ID' })
+    return res.status(400).json({ msg: "invalid address ID" })
   }
 
   try {
     const address = await Address.findByIdAndUpdate(req.params.addressId, req.body, { new: true })
     if (!address) {
-      return res.status(404).json({ msg: 'address not found' })
+      return res.status(404).json({ msg: "address not found" })
     }
     res.status(200).json(address)
   } catch (error) {
@@ -65,14 +65,14 @@ const updateAddressById = async (req, res) => {
 
 const deleteAddressById = async (req, res) => {
   if (!req.params.addressId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'Invalid address ID' })
+    return res.status(400).json({ msg: "Invalid address ID" })
   }
 
-  if (req.query.destroy === 'true') {
+  if (req.query.destroy === "true") {
     try {
       const address = await Address.findByIdAndDelete(req.params.addressId)
       if (!address) {
-        return res.status(404).json({ msg: 'Address not found' })
+        return res.status(404).json({ msg: "Address not found" })
       }
       return res.status(204).send()
     } catch (error) {
@@ -84,7 +84,7 @@ const deleteAddressById = async (req, res) => {
     const address = await Address.findByIdAndUpdate(req.params.addressId, { isActive: false }, { new: true })
 
     if (!address || address.isActive === false) {
-      return res.status(404).json({ msg: 'Address not found or already inactive' })
+      return res.status(404).json({ msg: "Address not found or already inactive" })
     }
     res.status(204).send()
   } catch (error) {

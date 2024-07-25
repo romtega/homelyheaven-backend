@@ -1,5 +1,5 @@
-import dotenv from 'dotenv'
-import mongoose from 'mongoose'
+import dotenv from "dotenv"
+import mongoose from "mongoose"
 
 dotenv.config()
 
@@ -8,12 +8,12 @@ const connect = () => {
 
   const { connection } = mongoose
 
-  connection.once('open', () => {
-    console.log('database connection stablished 🌴')
+  connection.once("open", () => {
+    console.log("database connection stablished 🌴")
   })
 
-  connection.on('error', (error) => {
-    console.log('database connection error ❌', error)
+  connection.on("error", (error) => {
+    console.log("database connection error ❌", error)
   })
 }
 

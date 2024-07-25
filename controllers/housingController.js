@@ -1,9 +1,9 @@
-import Housing from '../models/housing.js'
-import Address from '../models/address.js'
-import Review from '../models/reviews.js'
-import multer from 'multer'
-import { tmpdir } from 'os'
-import { v2 as cloudinary } from 'cloudinary'
+import Housing from "../models/housing.js"
+import Address from "../models/address.js"
+import Review from "../models/reviews.js"
+import multer from "multer"
+import { tmpdir } from "os"
+import { v2 as cloudinary } from "cloudinary"
 
 const storage = multer.diskStorage({
   destination: tmpdir(),
@@ -27,11 +27,11 @@ const createHousing = async (req, res) => {
   try {
     const housingData = req.body
     if (!housingData) {
-      return res.status(400).json({ msg: 'Housing data is missing' })
+      return res.status(400).json({ msg: "Housing data is missing" })
     }
 
     if (!housingData.address) {
-      return res.status(400).json({ msg: 'Address data is missing' })
+      return res.status(400).json({ msg: "Address data is missing" })
     }
 
     if (req.files && req.files.length > 0) {
@@ -61,7 +61,7 @@ const createHousing = async (req, res) => {
     const newHousing = new Housing(housingData)
     await newHousing.save()
 
-    const populatedHousing = await Housing.findById(newHousing._id).populate('address')
+    const populatedHousing = await Housing.findById(newHousing._id).populate("address")
 
     res.status(201).json(populatedHousing)
   } catch (error) {
@@ -71,9 +71,9 @@ const createHousing = async (req, res) => {
 
 const getAllHousing = async (req, res) => {
   try {
-    const housings = await Housing.find({ isActive: true }).populate('address')
+    const housings = await Housing.find({ isActive: true }).populate("address")
     if (!housings) {
-      return res.status(404).json({ msg: 'housings no found' })
+      return res.status(404).json({ msg: "housings no found" })
     }
     res.status(200).json(housings)
   } catch (error) {
@@ -83,12 +83,12 @@ const getAllHousing = async (req, res) => {
 
 const getHousingById = async (req, res) => {
   if (!req.params.housingId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'invalid housing ID' })
+    return res.status(400).json({ msg: "invalid housing ID" })
   }
   try {
-    const housing = await Housing.findById({ _id: req.params.housingId, isActive: true }).populate('address')
+    const housing = await Housing.findById({ _id: req.params.housingId, isActive: true }).populate("address")
     if (!housing) {
-      return res.status(404).json({ msg: 'housing not found' })
+      return res.status(404).json({ msg: "housing not found" })
     }
     res.status(200).json(housing)
   } catch (error) {
@@ -98,13 +98,13 @@ const getHousingById = async (req, res) => {
 
 const updateHousingById = async (req, res) => {
   if (!req.params.housingId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'invalid housing ID' })
+    return res.status(400).json({ msg: "invalid housing ID" })
   }
 
   try {
     const housing = await Housing.findByIdAndUpdate(req.params.housingId, req.body, { new: true })
     if (!housing) {
-      return res.status(404).json({ msg: 'housing not found' })
+      return res.status(404).json({ msg: "housing not found" })
     }
     res.status(200).json(housing)
   } catch (error) {
@@ -114,14 +114,14 @@ const updateHousingById = async (req, res) => {
 
 const deleteHousingById = async (req, res) => {
   if (!req.params.housingId.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.status(400).json({ msg: 'invalid housing ID' })
+    return res.status(400).json({ msg: "invalid housing ID" })
   }
 
-  if (req.query.destroy === 'true') {
+  if (req.query.destroy === "true") {
     try {
       const housing = await Housing.findByIdAndDelete(req.params.housingId)
       if (!housing) {
-        return res.status(404).json({ msg: 'housing not found' })
+        return res.status(404).json({ msg: "housing not found" })
       }
       return res.status(204).json()
     } catch (error) {
@@ -133,7 +133,7 @@ const deleteHousingById = async (req, res) => {
     const housing = await Housing.findByIdAndUpdate(req.params.housingId, { isActive: false }, { new: false })
 
     if (!housing || housing.isActive === false) {
-      return res.status(404).json({ msg: 'housing not found' })
+      return res.status(404).json({ msg: "housing not found" })
     }
     res.status(204).json()
   } catch (error) {
@@ -144,22 +144,22 @@ const deleteHousingById = async (req, res) => {
 const getHousingQuery = async (req, res) => {
   const querysDB = { isActive: true }
 
-  const housingKeys = ['name', 'type', 'price', 'bedrooms', 'bathrooms']
+  const housingKeys = ["name", "type", "price", "bedrooms", "bathrooms"]
   housingKeys.forEach(key => {
     if (req.query[key]) {
-      if (key === 'price' || key === 'bedrooms' || key === 'bathrooms') {
+      if (key === "price" || key === "bedrooms" || key === "bathrooms") {
         querysDB[key] = req.query[key]
       } else {
-        querysDB[key] = { $regex: new RegExp(req.query[key], 'i') }
+        querysDB[key] = { $regex: new RegExp(req.query[key], "i") }
       }
     }
   })
 
   const addressQuery = {}
-  const addressKeys = ['street', 'city', 'state', 'postalCode', 'country']
+  const addressKeys = ["street", "city", "state", "postalCode", "country"]
   addressKeys.forEach(key => {
     if (req.query[key]) {
-      addressQuery[key] = { $regex: new RegExp(req.query[key], 'i') }
+      addressQuery[key] = { $regex: new RegExp(req.query[key], "i") }
     }
   })
 
@@ -170,10 +170,10 @@ const getHousingQuery = async (req, res) => {
       querysDB.address = { $in: addressIds }
     }
 
-    const housings = await Housing.find(querysDB).populate('address')
+    const housings = await Housing.find(querysDB).populate("address")
 
     if (!housings || housings.length === 0) {
-      return res.status(404).json({ msg: 'Housings not found' })
+      return res.status(404).json({ msg: "Housings not found" })
     }
     res.status(200).json(housings)
   } catch (error) {
@@ -192,7 +192,7 @@ const updateHousingRating = async (housingId) => {
       await Housing.findByIdAndUpdate(housingId, { califications: 0 })
     }
   } catch (error) {
-    console.error('Error updating housing rating:', error)
+    console.error("Error updating housing rating:", error)
     throw error
   }
 }
