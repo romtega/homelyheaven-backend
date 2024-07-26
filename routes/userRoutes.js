@@ -1,13 +1,18 @@
-import express from "express"
-import { deleteUserById, getAllUser, getUserById, updateUserById } from "../controllers/userController.js"
-import { isAuth } from "../middlewares/isAuth.js"
-import { isAdmin } from "../middlewares/isAdmin.js"
+import express from "express";
+import { isAuth } from "../middleware/isAuth.js";
+import { isAdmin } from "../middleware/isAdmin.js";
+import {
+  getAllUsers,
+  getUserById,
+  updateUserById,
+  deleteUserById,
+} from "../controllers/userController.js";
 
-const userRoutes = express.Router()
+const router = express.Router();
 
-userRoutes.get("/", isAuth, isAdmin, getAllUser)
-userRoutes.get("/:userId", isAuth, isAdmin, getUserById)
-userRoutes.patch("/:userId", isAuth, isAdmin, updateUserById)
-userRoutes.delete("/:userId", isAuth, isAdmin, deleteUserById)
+router.get("/admin/users", isAuth, isAdmin, getAllUsers);
+router.get("/admin/users/:userId", isAuth, isAdmin, getUserById);
+router.put("/admin/users/:userId", isAuth, isAdmin, updateUserById);
+router.delete("/admin/users/:userId", isAuth, isAdmin, deleteUserById);
 
-export default userRoutes
+export default router;
