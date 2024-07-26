@@ -2,6 +2,7 @@ import express from "express";
 import { connect } from "./config/database.js";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import propertyRoutes from "./routes/propertyRoutes.js";
 import morgan from "morgan";
 import cors from "cors";
 
@@ -16,6 +17,7 @@ api.use(morgan("tiny"));
 
 api.use("/api/v1", authRoutes);
 api.use("/api/v1/users", userRoutes);
+api.use("/api/v1/properties", propertyRoutes);
 
 api.listen(PORT, () => {
   console.log(`server is running in http://localhost:${PORT}`);

@@ -1,3 +1,6 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/export */
+/* eslint-disable comma-dangle */
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(

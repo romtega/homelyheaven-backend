@@ -19,7 +19,7 @@ const propertySchema = new mongoose.Schema(
     bedrooms: { type: Number, required: true },
     bathrooms: { type: Number, required: true },
     maxGuests: { type: Number, required: true },
-    environment: { type: String, enum: environmentEnum },
+    environment: { type: String, enum: environmentEnum, required: true },
     amenities: {
       wifi: { type: Boolean, default: false },
       parking: { type: Boolean, default: false },
