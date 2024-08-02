@@ -1,4 +1,5 @@
 import Property from "../models/property.js";
+import User from "../models/user.js";
 
 const createProperty = async (req, res) => {
   try {
@@ -14,7 +15,10 @@ const createProperty = async (req, res) => {
 
 const getAllProperties = async (req, res) => {
   try {
-    const properties = await Property.find({ isActive: true });
+    const properties = await Property.find({ isActive: true }).populate({
+      path: "owner",
+      select: "firstName lastName",
+    });
     return res.status(200).json(properties);
   } catch (error) {
     return res

@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unsupported-features/es-syntax */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/export */
 /* eslint-disable comma-dangle */
