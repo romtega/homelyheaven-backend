@@ -16,9 +16,9 @@ api.use(express.json());
 api.use(cors());
 api.use(morgan("tiny"));
 
-api.get("/test-endpoint", (req, res) => {
-  res.json({ message: "Conexion exitosa con el backend" });
-});
+// api.get("/test-endpoint", (req, res) => {
+//   res.json({ message: "Conexion exitosa con el backend" });
+// });
 
 api.use("/api/v1", authRoutes);
 api.use("/api/v1/users", userRoutes);

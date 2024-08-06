@@ -25,22 +25,22 @@ const register = async (req, res) => {
   try {
     const {
       email,
-      password,
       firstName,
       lastName,
+      password,
       phoneNumber,
-      username,
       role,
+      username,
     } = req.body;
 
     if (
       !email ||
-      !password ||
       !firstName ||
       !lastName ||
+      !password ||
       !phoneNumber ||
-      !username ||
-      !role
+      !role ||
+      !username
     ) {
       return res.status(400).json({ msg: "All fields are required" });
     }
@@ -50,8 +50,12 @@ const register = async (req, res) => {
 
     let imageUrl = "";
     if (req.file) {
-      const result = await cloudinary.v2.uploader.upload(req.file.path);
-      imageUrl = result.secure_url;
+      try {
+        const result = await cloudinary.v2.uploader.upload(req.file.path);
+        imageUrl = result.secure_url;
+      } catch (uploadError) {
+        return res.status(500).json({ msg: "Image upload failed" });
+      }
     }
 
     const newUser = await User.create({
@@ -68,6 +72,9 @@ const register = async (req, res) => {
     newUser.password = undefined;
     return res.status(201).json({ msg: "User created successfully", newUser });
   } catch (error) {
+    if (error.name === "ValidationError") {
+      return res.status(400).json({ msg: error.message });
+    }
     return res
       .status(500)
       .json({ msg: `Error creating user: ${error.message}` });
