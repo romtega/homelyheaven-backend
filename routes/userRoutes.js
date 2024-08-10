@@ -10,9 +10,9 @@ import {
 
 const router = express.Router();
 
-router.get("/admin/users", isAuth, isAdmin, getAllUsers);
-router.get("/admin/users/:userId", isAuth, isAdmin, getUserById);
-router.put("/admin/users/:userId", isAuth, isAdmin, updateUserById);
-router.delete("/admin/users/:userId", isAuth, isAdmin, deleteUserById);
+router.get("/", isAuth, getAllUsers);
+router.get("/:userId", isAuth, getUserById);
+router.put("/:userId", isAuth, isAdmin, updateUserById);
+router.delete("/:userId", isAuth, isAdmin, deleteUserById);
 
 export default router;

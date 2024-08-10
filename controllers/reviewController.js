@@ -32,10 +32,10 @@ const getReviewsByProperty = async (req, res) => {
   const { propertyId } = req.params;
 
   try {
-    const reviews = await Review.find({ property: propertyId }).populate(
-      "user",
-      "username"
-    );
+    const reviews = await Review.find({ property: propertyId }).populate({
+      path: "user",
+      select: "firstName lastName username", // Selecciona los campos que necesitas
+    });
     if (!reviews.length) {
       return res
         .status(404)
