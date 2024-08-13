@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken"; // Usando jsonwebtoken en lugar de jwt-simple
 import multer from "multer";
 import { tmpdir } from "os";
-import cloudinary from "cloudinary";
+import cloudinary from "../config/cloudinaryConfig.js";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -14,12 +14,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-
-cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET,
-});
 
 const register = async (req, res) => {
   try {
