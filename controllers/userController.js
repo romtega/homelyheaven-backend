@@ -1,4 +1,14 @@
 import User from "../models/user.js";
+import cloudinary from "../config/cloudinaryConfig.js";
+import multer from "multer";
+import { tmpdir } from "os";
+
+const storage = multer.diskStorage({
+  destination: tmpdir(),
+  filename: (req, file, cb) => cb(null, file.originalname),
+});
+
+const upload = multer({ storage });
 
 const getAllUsers = async (req, res) => {
   try {
@@ -44,12 +54,22 @@ const updateUserById = async (req, res) => {
   }
 
   try {
+    if (req.file) {
+      try {
+        const result = await cloudinary.v2.uploader.upload(req.file.path);
+        req.body.avatar = result.secure_url;
+      } catch (uploadError) {
+        return res.status(500).json({ msg: "Image upload failed" });
+      }
+    }
+
     const user = await User.findByIdAndUpdate(userId, req.body, {
       new: true,
     }).select("-password");
     if (!user) {
       return res.status(404).json({ msg: "User not found or inactive" });
     }
+
     return res.status(200).json(user);
   } catch (error) {
     return res
@@ -98,4 +118,4 @@ const deleteUserById = async (req, res) => {
   }
 };
 
-export { getAllUsers, getUserById, updateUserById, deleteUserById };
+export { getAllUsers, getUserById, updateUserById, deleteUserById, upload };
