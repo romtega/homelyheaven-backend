@@ -1,9 +1,34 @@
 import Property from "../models/property.js";
 import User from "../models/user.js";
 
+import multer from "multer";
+import { tmpdir } from "os";
+import cloudinary from "../config/cloudinaryConfig.js";
+
+const storage = multer.diskStorage({
+  destination: tmpdir(),
+  filename: (req, file, cb) => cb(null, file.originalname),
+});
+
+const upload = multer({ storage });
+
 const createProperty = async (req, res) => {
+  const imageUrls = [];
+  if (req.files) {
+    try {
+      for (const file of req.files) {
+        const result = await cloudinary.v2.uploader.upload(file.path);
+        imageUrls.push(result.secure_url);
+      }
+    } catch (uploadError) {
+      return res.status(500).json({ msg: "Image upload failed" });
+    }
+  }
   try {
-    const property = new Property(req.body);
+    const property = new Property({
+      ...req.body,
+      images: imageUrls,
+    });
     await property.save();
     return res.status(201).json(property);
   } catch (error) {
@@ -115,4 +140,5 @@ export {
   getPropertyById,
   updatePropertyById,
   deletePropertyById,
+  upload,
 };
