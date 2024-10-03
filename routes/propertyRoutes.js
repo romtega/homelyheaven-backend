@@ -16,7 +16,13 @@ const router = express.Router();
 router.get("/", getAllProperties);
 router.get("/:propertyId", getPropertyById);
 router.post("/", isAuth, isHost, upload.array("images", 10), createProperty);
-router.patch("/:propertyId", isAuth, isHost, updatePropertyById);
+router.patch(
+  "/:propertyId",
+  isAuth,
+  isHost,
+  upload.array("images", 10),
+  updatePropertyById
+);
 router.delete("/:propertyId", isAuth, isAdmin, deletePropertyById);
 
 export default router;

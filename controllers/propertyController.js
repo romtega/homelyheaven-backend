@@ -79,13 +79,36 @@ const updatePropertyById = async (req, res) => {
     return res.status(400).json({ msg: "Invalid property ID format" });
   }
 
+  const imageUrls = [];
+
+  // Si se envían archivos, subimos las nuevas imágenes a Cloudinary
+  if (req.files && req.files.length > 0) {
+    try {
+      for (const file of req.files) {
+        const result = await cloudinary.v2.uploader.upload(file.path);
+        imageUrls.push(result.secure_url);
+      }
+    } catch (uploadError) {
+      return res.status(500).json({ msg: "Image upload failed" });
+    }
+  }
+
   try {
-    const property = await Property.findByIdAndUpdate(propertyId, req.body, {
+    const updateData = { ...req.body };
+
+    // Si se subieron nuevas imágenes, actualizamos el campo images
+    if (imageUrls.length > 0) {
+      updateData.images = imageUrls;
+    }
+
+    const property = await Property.findByIdAndUpdate(propertyId, updateData, {
       new: true,
     });
+
     if (!property) {
       return res.status(404).json({ msg: "Property not found" });
     }
+
     return res.status(200).json(property);
   } catch (error) {
     return res
